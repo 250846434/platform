@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lc</groupId>
+		<artifactId>platform</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>platform-mybatis-generator</artifactId>
+	<packaging>war</packaging>
+	<name>platform-mybatis-generator Maven Webapp</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<velocity-engine-core.version>2.0</velocity-engine-core.version>
+		<mybatis-plus-generator.version>3.0.6</mybatis-plus-generator.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.lc</groupId>
+			<artifactId>platform-mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-generator</artifactId>
+			<version>${mybatis-plus-generator.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lc</groupId>
+			<artifactId>platform-jsp-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-engine-core</artifactId>
+			<version>${velocity-engine-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>mybatis-generator</finalName>
+		<!-- <plugins> -->
+		<!-- <plugin> -->
+		<!-- <artifactId>maven-antrun-plugin</artifactId> -->
+		<!-- <executions> -->
+		<!-- <execution> -->
+		<!-- <id>copy-lib-src-webapps</id> -->
+		<!-- <phase>package</phase> -->
+		<!-- <configuration> -->
+		<!-- <tasks> -->
+		<!-- <delete dir="WebContent/WEB-INF/lib" /> -->
+		<!-- <copy todir="WebContent/WEB-INF/lib"> -->
+		<!-- <fileset dir="target/platform/WEB-INF/lib"> -->
+		<!-- <include name="*" /> -->
+		<!-- </fileset> -->
+		<!-- </copy> -->
+		<!-- </tasks> -->
+		<!-- </configuration> -->
+		<!-- <goals> -->
+		<!-- <goal>run</goal> -->
+		<!-- </goals> -->
+		<!-- </execution> -->
+		<!-- </executions> -->
+		<!-- </plugin> -->
+		<!-- </plugins> -->
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
